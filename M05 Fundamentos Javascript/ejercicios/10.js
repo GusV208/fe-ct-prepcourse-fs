@@ -3,6 +3,20 @@ function esFechaValida(fecha) {
   // Comprueba si este corresponde a una fecha válida.
   // Si es así, retorna true, sino retorna false.
   // Tu código:
+  
+  //let hoy = new Date();
+  //if (fecha<hoy || fecha==hoy){
+  //  return true;
+  //} else{
+  //  return false;
+  //}
+
+  if (fecha instanceof Date && !isNaN(fecha.getTime())){
+    return true;
+  } else {
+    return false;
+  }
 }
+
 
 module.exports = esFechaValida;

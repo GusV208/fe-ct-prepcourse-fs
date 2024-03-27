@@ -6,7 +6,23 @@ function deObjetoAarray(objeto) {
   // Estos elementos debe ser cada par clave:valor del objeto recibido.
   // [EJEMPLO]: {D: 1, B: 2, C: 3} ---> [['D', 1], ['B', 2], ['C', 3]].
   // Tu código:
+
+  let nuevoObjeto = (Object.entries(objeto));
+  return nuevoObjeto;
+
+  // Solucion Henry
+
+  // var arrayPadre = [];
+
+  // for(var propiedad in objeto){
+  //   var array = [propiedad, objeto[propiedad]];
+  //   arrayPadre.push(array);
+  // }
+  // return arrayPadre;
+
 }
+
+
 
 function numberOfCharacters(string) {
   // La función recibe un string. Debes recorrerlo y retornar un objeto donde cada propiedad es una de las
@@ -14,7 +30,28 @@ function numberOfCharacters(string) {
   // Las letras deben estar en orden alfabético.
   // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
   // Tu código:
+
+  var arrayOrdenado = string.split("").sort();
+
+  var suma = 1;
+  var obj = {};
+
+  for (let i = 0; i < arrayOrdenado.length; i++) {
+
+    if (arrayOrdenado[i] === arrayOrdenado[i + 1]) {
+      suma = suma + 1;
+    } else {
+      obj[arrayOrdenado[i]] = suma;
+      suma = 1;
+    }
+  }
+
+  return obj;
+
+
 }
+
+
 
 function capToFront(string) {
   // Recibes un string con algunas letras en mayúscula y otras en minúscula.
@@ -22,7 +59,62 @@ function capToFront(string) {
   // Retornar el string.
   // [EJEMPLO]: soyHENRY ---> HENRYsoy
   // Tu código:
+
+  console.log(string);
+
+  var abc = [
+    A,
+    B,
+    C,
+    D,
+    E,
+    F,
+    G,
+    H,
+    I,
+    J,
+    K,
+    L,
+    M,
+    N,
+    O,
+    P,
+    Q,
+    R,
+    S,
+    T,
+    U,
+    V,
+    W,
+    X,
+    Y,
+    Z,
+  ];
+  var inicio = [];
+  var final = [];
+
+  var cambioAArray = string.split("");
+  console.log(cambioAArray);
+
+  for (var i = 0; i < cambioAArray.length; i++) {
+    if (cambioAArray[i] === abc[i]) {
+      inicio.push(cambioAArray[i]);
+    } else {
+      final.push(cambioAArray[i]);
+    }
+  console.log(inicio);
+  console.log(final);
+  }
+//   var stringFinal = inicio.concat(final);
+//   return stringFinal.join("");
+
+//   console.log(stringFinal);
+
+
+  
 }
+
+
 
 function asAmirror(frase) {
   // Recibes una frase. Tu tarea es retornar un nuevo string en el que el orden de las palabras sea el mismo.
